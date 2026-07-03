@@ -1,0 +1,211 @@
+/* 防止自动填充时浏览器改变样式 */
+input:-webkit-autofill {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+  -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 5rem !important;
+}
+
+/* 毛玻璃搜索栏整体 */
+.search-bar-glass {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 0.8px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+              rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 输入框 */
+.search-bar-glass input {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.95);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar-glass input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* 按钮统一样式 */
+.search-bar-glass button {
+  margin-left: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+
+.search-bar-glass button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.search-bar-glass button:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 提示框 */
+.suggestions-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  display: none;
+  max-height: 250px;
+  overflow-y: auto;
+  /* 隐藏滚动条（WebKit 浏览器） */
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE 10+ */
+}
+
+.suggestions-box::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari */
+}
+
+/* 单个提示项 */
+.suggestion-item {
+  padding: 10px 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+}
+
+/* tooltip 样式 */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 移动端适配（768px 以下） */
+@media (max-width: 768px) {
+  .search-bar-glass {
+    padding: 8px;
+  }
+
+  .search-bar-glass input {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .search-bar-glass button {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .suggestions-box {
+    max-width: 100vw;
+    left: 0;
+    border-radius: 0.75rem;
+  }
+
+  .tooltip .tooltip-text {
+    font-size: 11px;
+    bottom: 110%;
+  }
+}
+
+/* 超小屏适配（320px 以下） */
+@media (max-width: 375px) {
+  .search-bar-glass input {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .search-bar-glass button {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .suggestion-item {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-bar-glass {
+    padding: 6px;
+  }
+
+  .search-bar-glass input {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .search-bar-glass button {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .tooltip .tooltip-text {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}

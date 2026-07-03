@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知春社-文集</title>
+  <meta name="description" content="我们把这些轻声细语、一页页写下的念头，收进《知春集》。像把春天折叠起来，放进口袋里，等你想念的时候，就翻开看看。">
+  <meta name="keywords" content="知春社, 文集页, 创作者, yesandno, yesandnoandperhaps, 文学, 哲学, 灵感">
+  <meta name="author" content="yesandnoandperhaps团队">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://zhichun.yesandno.cn/corpus/">
+  <link rel="icon" type="image/png" href="/img/56a41320991856531f3c50c2d3488a1b_720.png">
+  <link rel="apple-touch-icon" href="/img/56a41320991856531f3c50c2d3488a1b_720.png">
+
+  <meta property="og:title" content="知春社 - 文集页">
+  <meta property="og:description" content="我们把这些轻声细语、一页页写下的念头，收进《知春集》。像把春天折叠起来，放进口袋里，等你想念的时候，就翻开看看。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zhichun.yesandno.cn/corpus/">
+  <meta property="og:image" content="https://zhichun.yesandno.cn/img/56a41320991856531f3c50c2d3488a1b_720.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="知春社 - 文集页">
+  <meta name="twitter:description" content="我们把这些轻声细语、一页页写下的念头，收进《知春集》。像把春天折叠起来，放进口袋里，等你想念的时候，就翻开看看。">
+  <meta name="twitter:image" content="https://zhichun.yesandno.cn/img/56a41320991856531f3c50c2d3488a1b_720.png">
+
+
+  <link rel="stylesheet" href="css/CorpusCard.css">
+  <link rel="stylesheet" href="css/Main.css">
+  <link rel="stylesheet" href="css/Footer.css">
+  <link rel="stylesheet" href="css/Toc.css">
+  <link rel="stylesheet" href="css/Head.css">
+  <link rel="stylesheet" href="css/Search.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4924106_1m79fvvlczc.css"/>
+</head>
+<body>
+
+  <div class="hero-section">
+    <script src="js/RandomBackground.js"></script>
+    <script src="js/Hero.js"></script>
+    <div class="hero-text">
+      <h2>翻开的时候</h2>
+      <p>我们把这些轻声细语、一页页写下的念头，收进《知春集》。像把春天折叠起来，放进口袋里，等你想念的时候，就翻开看看。</p>
+    </div>
+    <div class="search-bar-glass">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="输入文集名..."
+        oninput="showSuggestions()"
+      />
+      <div class="tooltip">
+        <button onclick="goToAuthorLink()">
+          <i class="iconfont icon-location-arrow"></i>
+        </button>
+        <span class="tooltip-text">跳转到文集链接</span>
+      </div>
+
+      <div class="tooltip">
+        <button onclick="scrollToAuthorCard()">
+          <i class="iconfont icon-map-marker-alt"></i>
+        </button>
+        <span class="tooltip-text">滚动到文集卡片</span>
+      </div>
+      <div id="suggestions" class="suggestions-box"></div>
+    </div>
+  </div>
+
+  <div class="author" id="section2">
+    <div class="head-content" id="文集方形">
+        <script src="js/CorpusList.js"></script>
+        <script src="js/Card.js"></script>
+        <script>
+          createAuthorCards(authors, "文集方形",false,false,"./corpus/","https://yesandnoandperhaps.cn/posts/");
+        </script>
+    </div>
+  </div>
+  <footer>
+    <section class="footer-left" style="background-color: #222">
+      <strong>&copy; 2025 知春社</strong><br>
+      域名：<a href="https://zhichun.yesandno.cn" target="_blank">zhichun.yesandno.cn</a>
+      <br>与其说“知寒”、不如说“知春”。
+
+    </section>
+    <section class="footer-right" style="background-color: #222">
+      公众号：
+      <a href="https://mp.weixin.qq.com/s/oqfT4XMQXxZpvLy-9rg5qw" target="_blank">知春社</a>
+      、<a href="https://mp.weixin.qq.com/s/LudcxAEAQ77vQxSN_zHs-A" target="_blank">穸阑隐阁</a>
+      、yesandnoandperhaps<br>
+      合作链接：
+        <a href="https://www.yesandnoandperhaps.cn/">yesandnoandperhaps</a>、
+        <a href="https://xlyg.fun" target="_blank">穸阑隐阁</a>
+      <br>页面开发：yesandnoandperhaps·李岚霏
+    </section>
+  </footer>
+  <script src="js/CorpusCard.js"></script>
+  <script src="js/Enter.js"></script>
+  <script src="js/Search.js"></script>
+</body>
+</html>

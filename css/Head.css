@@ -1,0 +1,17 @@
+.hero-section {
+  background-color: #f0f0f0;
+  padding: 80px 20px;
+  text-align: center;
+  color: #333;
+}
+
+.hero-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 0 auto;
+}

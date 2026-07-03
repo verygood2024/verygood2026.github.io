@@ -1,0 +1,105 @@
+#toc-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #222;
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 56px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#toc-button:hover {
+  background: #444;
+}
+
+#toc-button.hidden {
+  transform: translateX(150%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#toc-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 1rem;
+  z-index: 1000;
+  width: 220px;
+  max-height: 70vh;
+  overflow-y: auto;
+
+  transform: translateX(150%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#toc-popup.shown {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#toc-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#toc-popup li {
+  margin-bottom: 0.5rem;
+}
+
+#toc-popup a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
+#toc-popup a:hover {
+  color: #0077cc;
+}
+
+#toc-popup ul ul {
+  margin-left: 1rem;
+  margin-top: 0.3rem;
+  border-left: 2px solid #eee;
+  padding-left: 0.6rem;
+}
+
+#toc-popup li ul {
+  display: none;
+}
+
+#toc-popup li.open > ul {
+  display: block;
+}
+
+#toc-popup li.has-children > a::after {
+  content: " ▸";
+  float: right;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+#toc-popup li.open > a::after {
+  content: " ▼";
+}
+
+section {
+  padding: 100px 0;
+  border-bottom: 1px solid #eee;
+}

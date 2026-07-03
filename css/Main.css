@@ -1,0 +1,102 @@
+@import url("https://fontsapi.zeoseven.com/285/main/result.css");
+
+:root {
+    --letter-spacing: 0.02em;
+    --code-font-size: 100%;
+    --font-weight: 500;
+    --font-family: "Noto Serif CJK"
+}
+
+p, img {
+    pointer-events: none;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    font-family: var(--font-family), serif;
+    letter-spacing: var(--letter-spacing);
+    font-weight: var(--font-weight);
+}
+
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+p {
+  text-wrap: pretty;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  z-index: 999;
+  transition: top 0.3s ease;
+}
+
+nav.hidden {
+  top: -100px;
+}
+
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3em;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.parallax-1 {
+  background-image: url('../img/7d3f5a146ee7e9a513ee9dfe204f6b3d_720.png');
+}
+
+.parallax-2 {
+  background-image: url('../img/qq_pic_merged_1746381764247.jpg');
+}
+
+.parallax-3 {
+  background-image: url('../img/chinese-style-7646396_1280.jpg');
+}
+
+.parallax-4 {
+  background-image: url('../img/e4b92c1d16c6d3282d35a9d76c3360a8.jpg');
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+  background: white;
+}
+
+h3{
+    margin-top: 1.5em;
+}

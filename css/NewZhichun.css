@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  caret-color: transparent !important;
+
+}
+
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #fff;
+}
+
+/* 容器 */
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-y: auto;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* 左侧图片 */
+.left img {
+  width: 100%;
+  max-height: 40vh;
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+
+/* 毛玻璃框 */
+.glass-box {
+  width: 100%;
+  height: 5vw;
+  max-width: 100%;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 0.8px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+              rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+  color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glass-box:hover {
+  border-radius: 5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3),
+              rgba(200, 200, 200, 0.3) 0px 8px 20px;
+}
+
+/* 右侧区域 */
+.right {
+  background-color: transparent;
+  color: #000;
+  padding: 10px;
+}
+
+.right .first-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.right .box {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 0.8px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+              rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.right .box:hover {
+  transform: scale(1.03);
+}
+
+.right .recommended-box {
+  writing-mode: vertical-rl;
+  direction: rtl;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 2;
+}
+
+/* 第二行：三列卡片 */
+.right .second-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.right .second-row .box {
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 0.8px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+              rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.right .second-row .box:nth-child(5) {
+  grid-column: span 2;
+}
+
+/* 标题样式 */
+.right .second-row .box h3 {
+  font-size: 0.9em;
+  font-weight: 600;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.right .second-row .box h3 .iconfont {
+  font-size: 1em;
+  line-height: 1;
+  color: #4c4948;
+  align-self: center;
+}
+
+/* 移动端 */
+@media (max-width: 766px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .glass-box {
+    height: 18vw;
+    font-size: 0.9rem;
+  }
+
+  .left img {
+    max-height: 30vh;
+  }
+
+  .right .first-row {
+    flex-direction: column;
+  }
+
+  .right .box {
+    margin: 10px 0;
+  }
+
+  .right .second-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .right .second-row .box {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .right .recommended-box {
+    writing-mode: horizontal-tb;
+    direction: ltr;
+    white-space: normal;
+  }
+}
+a {
+  color: rgba(63, 63, 63, 0.8);
+  text-decoration: none;
+}
+
+#quote-meta a {
+    pointer-events: auto;
+}
+
+#recommended-article-list .iconfont {
+  line-height: 1;
+  color: #4c4948;
+}

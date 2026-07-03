@@ -1,0 +1,150 @@
+/* 卡片 */
+.head-content {
+    flex-wrap: wrap;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    gap: 16px;
+    padding: 12px;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    transform: translateX(-100vw);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.card.start {
+    animation-name: slide;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+.card.end {
+    animation-name: slide-end;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100vw);
+        opacity: 0;
+        border-radius: 0px;
+    }
+    50% {
+        border-radius: 0px;
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        border-radius: 12px;
+    }
+}
+
+@keyframes slide-end {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+        border-radius: 12px;
+    }
+    50% {
+        border-radius: 12px;
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100vw);
+        opacity: 0;
+        border-radius: 0px;
+    }
+}
+
+.card a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: transparent;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 12px;
+}
+
+.card a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.card * {
+  display: block;
+  justify-content: initial;
+  align-items: initial;
+  user-select: text;
+}
+
+.card-tile-text-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    padding: 0;
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.card-tile-text {
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    padding: 8px 12px;
+}
+
+
+
+
+@media (min-width: 1024px) {
+    .card {
+        width: calc((100% - 5 * 16px) / 6);
+    }
+}
+
+
+@media (max-width: 767px) {
+    .card {
+        width: calc((100% - 16px) / 2);
+    }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card {
+        width: calc((100% - 2 * 16px) / 3);
+    }
+}
+
